@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/validaCPF-CNPJ.iml" filepath="$PROJECT_DIR$/.idea/validaCPF-CNPJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validaCPF-CNPJ.iml" filepath="$PROJECT_DIR$/validaCPF-CNPJ.iml" />
     </modules>
   </component>
 </project>
