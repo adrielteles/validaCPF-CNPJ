@@ -24,7 +24,9 @@ public class Cpf {
     }
 
     public void validateCpf(){
+
         int sizeCpf = 11;
+
         char firstChar = this.cpf.charAt(0);
         char[] cpfRepeat = new char[sizeCpf];
         Arrays.fill(cpfRepeat,firstChar);
