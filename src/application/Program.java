@@ -31,7 +31,7 @@ public class Program {
                 System.out.print(ANSI_RESET);
                 System.out.print(ANSI_PURPLE);
                 System.out.println("1. Validate CPF");
-                System.out.println("2. Generate");
+                System.out.println("2. Generate CPF");
                 System.out.println("3. Exit");
                 System.out.print(ANSI_RESET);
                 System.out.print(ANSI_CYAN);
@@ -57,7 +57,17 @@ public class Program {
                     System.out.print(ANSI_CYAN);
                     System.out.println("-----------------------\n");
                     System.out.print(ANSI_RESET);
-                }else if(option ==3){
+                }else if(option == 2){
+                    System.out.print(ANSI_CYAN);
+                    System.out.print("How many:"+ANSI_RESET);
+                    int quantity = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print(ANSI_GREEN);
+                    for(int i=0; i<quantity; i++){
+                        System.out.println(Cpf.generateCpf());
+                    }
+                    System.out.print(ANSI_RESET);
+                }else if(option == 3){
                     break;
                 }else{
                     System.out.println("\n-----------------------");

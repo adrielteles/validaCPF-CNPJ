@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Cpf {
 
@@ -64,5 +65,45 @@ public class Cpf {
 
         this.valid = cpfResult.equals(this.cpf);
 
+    }
+
+    public static String generateCpf(){
+
+
+        //nine digits
+        String nineDigits;
+        Random random = new Random();
+        StringBuilder randomNineDigits = new StringBuilder(9);
+
+        //generate random nine digits
+        for(int i=0;i<9;i++){
+            randomNineDigits.append(random.nextInt(10));
+        }
+        nineDigits = randomNineDigits.toString();
+        int regressiveCount = 10;
+        int result = 0;
+
+        for(int i=0; i< nineDigits.length();i++){
+            result += Character.getNumericValue(nineDigits.charAt(i))*regressiveCount;
+            regressiveCount -=1;
+        }
+        int firstDigit = (result*10) % 11;
+        firstDigit = (firstDigit <=9) ?  firstDigit: 0;
+
+
+        //ten digits
+        String tenDigits = nineDigits+firstDigit;
+        int regressiveCount2 = 11;
+        int result2 = 0;
+
+        for(int i=0; i< tenDigits.length();i++){
+            result2 += Character.getNumericValue(tenDigits.charAt(i))*regressiveCount2;
+            regressiveCount2 -=1;
+        }
+
+        int secondDigit = (result2*10) % 11;
+        secondDigit = (secondDigit <=9) ?  secondDigit: 0;
+
+        return nineDigits+firstDigit+secondDigit;
     }
 }
