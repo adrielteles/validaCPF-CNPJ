@@ -21,7 +21,7 @@ public class Cpf {
         return this.valid;
     }
     private String formatCpf(String cpf){
-        return cpf.replace(" ","").replace(".","").replace("-", "");
+        return cpf.replaceAll("[^0-9]", "");
     }
 
     public void validateCpf(){
