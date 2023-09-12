@@ -7,7 +7,7 @@ obs: CPF/CNPJ gerado é matematicamente valido conforme o algoritimo dos documen
 
 Clone o repositorio e execute em qualquer IDE.
 ```
-git@github.com:adrielteles/validaCPF-CNPJ.git
+git clone git@github.com:adrielteles/validaCPF-CNPJ.git
 ```
 
 ## Preview
