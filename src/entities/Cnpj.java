@@ -112,7 +112,6 @@ public class Cnpj {
         peso = 2;
         for (i = 11; i >= 0; i--) {
             // converte o i-ésimo caractere do CNPJ em um número:
-            // por exemplo, transforma o caractere '0' no inteiro 0
             // (48 eh a posição de '0' na tabela ASCII)
             num = (int) (twelveDigits.charAt(i) - 48);
             sm = sm + (num * peso);
