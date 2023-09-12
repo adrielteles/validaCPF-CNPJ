@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Cnpj {
 
@@ -85,5 +86,67 @@ public class Cnpj {
 
         this.valid = cnpjResult.equals(this.cnpj);
 
+    }
+
+    public static String generateCnpj(){
+
+
+        String twelveDigits;
+        Random random = new Random();
+        StringBuilder randomTwelveDigits = new StringBuilder(12);
+
+        //generate random nine digits
+        for(int i=0;i<8;i++){
+            randomTwelveDigits.append(random.nextInt(10));
+        }
+        randomTwelveDigits.append("0001");
+        twelveDigits = randomTwelveDigits.toString();
+
+
+
+        char firstDigit, secondDigit;
+        int sm, i, r, num, peso;
+
+        // Calculo do 1o. Digito Verificador
+        sm = 0;
+        peso = 2;
+        for (i = 11; i >= 0; i--) {
+            // converte o i-ésimo caractere do CNPJ em um número:
+            // por exemplo, transforma o caractere '0' no inteiro 0
+            // (48 eh a posição de '0' na tabela ASCII)
+            num = (int) (twelveDigits.charAt(i) - 48);
+            sm = sm + (num * peso);
+            peso = peso + 1;
+            if (peso == 10)
+                peso = 2;
+        }
+
+        r = sm % 11;
+        if ((r == 0) || (r == 1)){
+            firstDigit = '0';
+        } else{
+            firstDigit = (char) ((11 - r) + 48);
+        }
+
+
+        // Calculo do 2o. Digito Verificador
+        sm = 0;
+        peso = 2;
+        for (i = 12; i >= 0; i--) {
+            num = (int) ((twelveDigits+firstDigit).charAt(i) - 48);
+            sm = sm + (num * peso);
+            peso = peso + 1;
+            if (peso == 10)
+                peso = 2;
+        }
+
+        r = sm % 11;
+        if ((r == 0) || (r == 1)){
+            secondDigit = '0';
+        }else{
+            secondDigit = (char) ((11 - r) + 48);
+        }
+
+        return twelveDigits+firstDigit+secondDigit;
     }
 }

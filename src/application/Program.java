@@ -88,6 +88,16 @@ public class Program {
                     System.out.print(ANSI_CYAN);
                     System.out.println("-----------------------\n");
                     System.out.print(ANSI_RESET);
+                }else if(option == 4){
+                    System.out.print(ANSI_CYAN);
+                    System.out.print("How many:"+ANSI_RESET);
+                    int quantity = scan.nextInt();
+                    scan.nextLine();
+                    System.out.print(ANSI_GREEN);
+                    for(int i=0; i<quantity; i++){
+                        System.out.println(Cnpj.generateCnpj());
+                    }
+                    System.out.print(ANSI_RESET);
                 }else if(option == 5){
                     break;
                 }else{
