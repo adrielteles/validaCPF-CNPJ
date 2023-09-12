@@ -32,7 +32,7 @@ git@github.com:adrielteles/validaCPF-CNPJ.git
 
 ![gif-validate-cnpj](https://github.com/adrielteles/validaCPF-CNPJ/assets/51987683/1769a3f7-97bb-46ea-8999-e5ed81b6776a)
 
-### Gerar CPF
-#### Gera CPF passando a quantidade de CPF`s que deseja gerar
+### Gerar CNPJ
+#### Gera CNPJ passando a quantidade de CNPJ`s que deseja gerar
 
 ![gif-generate-cnpj](https://github.com/adrielteles/validaCPF-CNPJ/assets/51987683/137f4c54-dc9e-402e-879a-d6dd37245e7e)
